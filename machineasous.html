@@ -1,0 +1,281 @@
+<script src="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/10/casino-logo.jpg" crossorigin="anonymous"></script>
+<body>
+  <container>
+    <main>
+      <header>
+        <div class="caixas">
+          <div class="caixa"><img src="https://i.imgur.com/5x8jQs1.png" id="imgA"></div>
+          <div class="caixa"><img src="https://i.imgur.com/CwmksNU.png" id="imgB"></div>
+          <div class="caixa"><img src="https://i.imgur.com/x3GVdCh.png" id="imgC"></div>
+        </div>
+        <div class="box" id="money">Sua Carteira: <h3 id="sorte"></h3></div>
+        <div class="box" id="chances">Tentatives <h2></h2></div>
+        <button id="comprar">Acheter un jeton</button>
+        <button id="jogar">JOUER</button>
+      </header>
+    </main>
+    <span></span>
+    <footer>
+              
+    </footer>
+  </container>
+</body>
+<style>
+  @import url("https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/10/casino-logo.jpg");
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+button:focus {
+  outline: 0;
+  outline: none;
+}
+body {
+  font-family: Roboto, sans-serif;
+  background-image:url("https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/10/casino-logo.jpg");
+  font-size: 16px;
+  color: black;
+}
+container {
+  display: flex;
+  margin: 70px auto 0;
+  align-items: center;
+  flex-direction: column;
+}
+main {
+  width: 500px;
+  background: #e1e1e1;
+  padding: 22px 15px 15px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px -35px 0px 0px #B2B2B2,inset 0px 2px 0px 0px #767676,inset 0px -5px 0px 0px #767676, inset 0px 7px 0px 0px #ffffff;
+}
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+}
+header .caixas {
+  width: 470px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+  background:#000;
+  border-radius: 7px;
+}
+header .caixa {
+  width: 143px;
+  height: 190px;
+  background: #eee;
+  overflow: hidden;
+  display: block;
+  border: 4.5px solid #3f3f3f;
+  box-shadow: inset 0px 41px 28px -30px #000000, inset 0px -41px 28px -30px #000000;
+}
+header .caixa img {
+  width: 135px;
+  height: 135px;
+  display: block;
+  margin-top: 25px;
+  animation: stop 1s ease;
+}
+@keyframes stop {
+   from {
+     margin-top: -200px;
+   }
+   to { 
+     margin-top: 25px;
+   }
+}
+header .box {
+  height: 50px;
+  margin: 10px 0;
+  font-size: 10px;
+  color: #636363;
+  border-radius: 7px;
+  padding: 3px 5px;
+  border: 2px solid #c3c3c3;
+  background: #fff;
+}
+header .box h2 {
+  margin: 3px;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+}
+header .box h3 {
+  margin: 3px;
+  font-size: 18px;
+  color: black;
+  transition: 100ms;
+}
+#money {
+  width: 370px;
+  margin-right: 10px;
+}
+#chances {
+  width: 90px;
+}
+button{
+  height: 80px;
+  border: none;
+  font-size: 22px;
+  font-weight: 750;
+  align-self: bottom;
+  color: #FFF;
+  text-transform:uppercase;
+  border-radius: 7px;
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.25),inset 0px 5px 0px 0px rgba(255,255,255,0.15),inset 0px -7px 0px 0px rgba(0,0,0,0.25);
+}
+button:active {
+  box-shadow:inset 0px 0px 0px 1px rgba(0,0,0,0.25),inset 0px 5px 0px 0px rgba(0,0,0,0.25);
+}
+#comprar {
+  background: #000;
+  width: 160px;
+  margin-right: 10px;
+}
+#jogar {
+  background: #A70000;
+  width: 300px;
+}
+.bloqueado {
+  background: #4e4e4e!important;
+  box-shadow:inset 0px 0px 0px 1px rgba(0,0,0,0.25),inset 0px 5px 0px 0px rgba(0,0,0,0.25);
+}
+#jogar:active {
+  color: #134f2f;
+}
+#comprar:active {
+  color: #264c6b;
+}
+span{
+  z-index: 9999;
+  width: 450px;
+  padding: 2.5px 15px;
+  position: absolute;
+  margin: 130px 0;
+  text-align: center;
+  text-transform: uppercase;
+  line-height:30px;
+  color: #FFF;
+  background: #bf1111;
+  box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.35);
+}
+footer {
+  margin: 15px 0;
+}
+.page-logo {
+  width: 300px;
+}
+</style>
+<script>
+  const chaves = [
+  {},
+  {img: "https://cdn4.iconfinder.com/data/icons/slot-machine-icons/200/casino_7-512.png"},
+  {img: "https://maxcdn.icons8.com/Share/icon/Food/cherry1600.png"},
+  {img: "https://cdn131.picsart.com/271529251031211.png"}]
+
+const comprar = document.getElementById('comprar')
+const jogar = document.getElementById('jogar')
+const imgA = document.getElementById('imgA')
+const imgB = document.getElementById('imgB')
+const imgC = document.getElementById('imgC')
+
+var tentativas = 0
+var carteira = Math.floor(Math.random() * 5) + 20
+var preco = 5
+
+sorteA = null
+sorteB = null
+sorteC = null
+
+function aleatorio(){
+  sorteA = [Math.ceil(Math.random() * (chaves.length - 1))];
+  sorteB = [Math.ceil(Math.random() * (chaves.length - 1))];
+  sorteC = [Math.ceil(Math.random() * (chaves.length - 1))];
+  imgA.setAttribute('src', chaves[sorteA].img)
+  imgB.setAttribute('src', chaves[sorteB].img)
+  imgC.setAttribute('src', chaves[sorteC].img)
+  //alert(sorteA+sorteB+sorteC +" / "+ chaves[sorteA].nome + chaves[sorteB].nome + chaves[sorteC].nome)
+}
+
+function compra() {
+  if (carteira >= preco) {
+    carteira = carteira - preco
+    tentativas = tentativas + 3
+  } else {
+    document.querySelector('span').innerHTML = "Você não tem o valor necessário"
+    setTimeout(() => { document.querySelector('span').innerHTML = "" }, 1550)
+  } 
+}
+
+comprar.onclick = () => {
+  compra();
+  document.querySelector('h3').innerHTML = 'U$: '+ carteira
+  document.querySelector('h2').innerHTML = tentativas
+}
+
+function iniciar() {
+  document.querySelector('h3').innerHTML = 'U$: '+ carteira //desafio do paulo aparecer o resultado no html
+  document.querySelector('h2').innerHTML = tentativas
+}
+iniciar();
+jogar.onclick = () => {
+  jogar.disabled = true; 
+  Jackpot = Math.floor(Math.random() * 20) + 1 //desafio do Gui gerar entre 1 e 20
+  premio = Math.floor(Math.random() * 3) + 1
+  document.getElementById('jogar').className = "bloqueado"
+  while (tentativas > 0) {
+    tentativas = tentativas - 1
+    document.querySelector('h2').innerHTML = tentativas
+    var timer = setInterval(function(){aleatorio()}, 50);
+    aleatorio();
+    setTimeout(() => {    
+      clearInterval(timer);
+      var sorteio = sorteA + sorteB + sorteC
+      switch (sorteio) {
+        case "333":
+        case "222":
+        case "111":  
+          carteira = carteira + Jackpot
+          document.getElementById("sorte").style.color ='rgb(0,185,39)';
+          document.querySelector('h3').innerHTML = 'U$: '+ carteira + ' +' + Jackpot
+          setTimeout(() => {   document.getElementById("sorte").style.color ='rgb(0,0,0)';
+                            document.querySelector('h3').innerHTML = 'U$: ' + carteira}, 1000)
+          break
+        case "133":
+        case "122":
+        case "211":
+        case "233":
+        case "311":
+        case "322":
+        case "112":
+        case "113":
+        case "221":
+        case "223":
+        case "332":
+        case "331":
+          carteira = carteira + premio
+          document.getElementById("sorte").style.color ='rgb(0 138 160)';
+          document.querySelector('h3').innerHTML = 'U$: '+ carteira + ' +' + premio
+          setTimeout(() => {   document.getElementById("sorte").style.color ='rgb(0,0,0)';
+                            document.querySelector('h3').innerHTML = 'U$: ' + carteira}, 1000)
+          break
+      }
+    }, 1000)
+    setTimeout(() => { jogar.disabled = false
+                      document.getElementById('jogar').className = null;
+                     }, 1100)
+    return //desafio da rafa sair do while sem usar break
+  }
+  if(tentativas == 0) {document.querySelector('span').innerHTML = "Suas tentativas acabaram"
+                       jogar.disabled = false
+                       setTimeout(() => { document.querySelector('span').innerHTML = "" 
+                                         document.getElementById('jogar').className = null;}, 1000)
+                      }
+}
+</script>

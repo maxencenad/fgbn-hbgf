@@ -1,0 +1,142 @@
+  <title>MAKSENS / calculatrice</title>
+    <div class="calculatrice">
+        <div class="ecran"></div>
+        <div class="touches">
+            <button data-key="8" class="bouton">C</button>
+            <button data-key="53" class="bouton">(</button>
+            <button data-key="219" class="bouton">)</button>
+            <button data-key="111" class="bouton">/</button>
+            <button data-key="103" class="bouton">7</button>
+            <button data-key="104" class="bouton">8</button>
+            <button data-key="105" class="bouton">9</button>
+            <button data-key="106" class="bouton">*</button>
+            <button data-key="100" class="bouton">4</button>
+            <button data-key="101" class="bouton">5</button>
+            <button data-key="102" class="bouton">6</button>
+            <button data-key="109" class="bouton">-</button>
+            <button data-key="97" class="bouton">1</button>
+            <button data-key="98" class="bouton">2</button>
+            <button data-key="99" class="bouton">3</button>
+            <button data-key="107" class="bouton">+</button>
+            <button data-key="96" class="bouton">0</button>
+            <button data-key="110" class="bouton">.</button>
+            <button data-key="13" class="bouton">=</button>
+        </div>
+    </div>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(to top, #a18cd1 0%, #000 100%);
+}
+
+.calculatrice {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px black;
+}
+
+.ecran {
+    width: 100%;
+    background-color: rgb(198, 237, 255);
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.touches {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(5, 50px);
+    grid-gap: 7px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f7f7f7;
+    font-size: 18px;
+    box-shadow: 0 3px #a8a8a8;
+}
+
+button:active {
+    box-shadow: 0 1px #a8a8a8;
+    transform: translateY(2px);
+}
+
+button[data-key="13"] {
+    grid-column: span 2;
+    font-size: 35px;
+    background-color: #36e700;
+    font-weight: bold;
+    color: white;
+}
+
+button[data-key="8"] {
+    background-color: #ff9900;
+    font-weight: bold;
+    color: white;
+}
+
+    </style>
+    <script>
+        // DOM
+const touches = [...document.querySelectorAll(".bouton")];
+const listeKeycode = touches.map((touche) => touche.dataset.key);
+const ecran = document.querySelector(".ecran");
+
+document.addEventListener("keydown", (e) => {
+    const valeur = e.keyCode.toString();
+    calculer(valeur);
+});
+
+touches.forEach((touche) => {
+    touche.addEventListener("click", (e) => {
+        const valeur = e.target.dataset.key;
+        calculer(valeur);
+    });
+});
+
+const calculer = (valeur) => {
+    if (listeKeycode.includes(valeur)) {
+        switch (valeur) {
+            case "8":
+                ecran.textContent = "";
+                break;
+            case "13":
+                const calcul = eval(ecran.textContent);
+                ecran.textContent = calcul;
+                break;
+            default:
+                const indexKeycode = listeKeycode.indexOf(valeur);
+                const touche = touches[indexKeycode];
+                ecran.textContent += touche.innerHTML;
+        }
+    }
+};
+
+window.addEventListener("error", (e) => {
+    alert("Une erreur est survenue dans votre calcul : " + e.error.message);
+});
+
+    </script>
